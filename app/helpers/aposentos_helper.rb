@@ -1,0 +1,2 @@
+module AposentosHelper
+end

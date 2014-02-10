@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pkidaposento:</strong>
+  <%= @aposento.pkidaposento %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @aposento.descricao %>
+</p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @aposento.numero %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @aposento.valor %>
+</p>
+
+<%= link_to 'Edit', edit_aposento_path(@aposento) %> |
+<%= link_to 'Back', aposentos_path %>
