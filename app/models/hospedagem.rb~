@@ -1,0 +1,6 @@
+class Hospedagem < ActiveRecord::Base
+  belongs_to :conta
+  belongs_to :hospede
+  belongs_to :aposento          
+attr_accessible :conta_id, :hospede_id, :aposento_id, :dataEntrada, :dataSaida
+end

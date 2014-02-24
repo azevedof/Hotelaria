@@ -3,10 +3,10 @@
 <table>
   <thead>
     <tr>
-      <th>Pkidaposento</th>
+      <th>Valor</th>
       <th>Descricao</th>
       <th>Numero</th>
-      <th>Valor</th>
+      <th>Hotel</th>
       <th></th>
       <th></th>
       <th></th>
@@ -16,13 +16,13 @@
   <tbody>
     <% @aposentos.each do |aposento| %>
       <tr>
-        <td><%= aposento.pkidaposento %></td>
+        <td><%= aposento.valor %></td>
         <td><%= aposento.descricao %></td>
         <td><%= aposento.numero %></td>
-        <td><%= aposento.valor %></td>
+        <td><%= aposento.hotel %></td>
         <td><%= link_to 'Show', aposento %></td>
         <td><%= link_to 'Edit', edit_aposento_path(aposento) %></td>
-        <td><%= link_to 'Destroy', aposento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Excluir', aposento, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>

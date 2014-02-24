@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>descricao:</strong>
+  <%= @consumo.descricao %>
+</p>
+
+<p>
+  <strong>quantidade:</strong>
+  <%= @consumo.quantidade %>
+</p>
+
+<p>
+  <strong>valorUnitario:</strong>
+  <%= @consumo.valorUnitario %>
+</p>
+
+<%= link_to 'Edit', edit_consumo_path(@consumo) %> |
+<%= link_to 'Back', consumos_path %>

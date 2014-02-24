@@ -1,0 +1,2 @@
+class ConsumosController < InheritedResources::Base
+end

@@ -1,0 +1,33 @@
+<h1>Listing aposentos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Valor</th>
+      <th>Descricao</th>
+      <th>Numero</th>
+      <th>Hotel</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @aposentos.each do |aposento| %>
+      <tr>
+        <td><%= aposento.valor %></td>
+        <td><%= aposento.descricao %></td>
+        <td><%= aposento.numero %></td>
+        <td><%= aposento.hotel %></td>
+        <td><%= link_to 'Show', aposento %></td>
+        <td><%= link_to 'Edit', edit_aposento_path(aposento) %></td>
+        <td><%= link_to 'Excluir', aposento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Aposento', new_aposento_path %>

@@ -2,9 +2,9 @@
 
 FactoryGirl.define do
   factory :aposento do
-    pkidaposento ""
+    valor "MyString"
     descricao "MyString"
-    numero ""
-    valor ""
+    numero "MyString"
+    hotel nil
   end
 end

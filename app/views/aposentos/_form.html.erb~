@@ -1,0 +1,10 @@
+= semantic_form_for [@hotel] do |form|
+  
+  = form.input :hotel, :member_label => :nome, :label => 'hotel'
+  
+
+  = form.input :nome, :label => 'nome'
+  = form.input :descricao, :label => 'descricao'
+  = form.input :numero, :label => 'numero'
+
+  = form.submit 'Salvar'

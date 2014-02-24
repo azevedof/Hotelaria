@@ -23,7 +23,7 @@ describe AposentosController do
   # This should return the minimal set of attributes required to create a valid
   # Aposento. As you add validations to Aposento, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "pkidaposento" => "" } }
+  let(:valid_attributes) { { "valor" => "MyString" } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -85,14 +85,14 @@ describe AposentosController do
       it "assigns a newly created but unsaved aposento as @aposento" do
         # Trigger the behavior that occurs when invalid params are submitted
         Aposento.any_instance.stub(:save).and_return(false)
-        post :create, {:aposento => { "pkidaposento" => "invalid value" }}, valid_session
+        post :create, {:aposento => { "valor" => "invalid value" }}, valid_session
         assigns(:aposento).should be_a_new(Aposento)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Aposento.any_instance.stub(:save).and_return(false)
-        post :create, {:aposento => { "pkidaposento" => "invalid value" }}, valid_session
+        post :create, {:aposento => { "valor" => "invalid value" }}, valid_session
         response.should render_template("new")
       end
     end
@@ -106,8 +106,8 @@ describe AposentosController do
         # specifies that the Aposento created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Aposento.any_instance.should_receive(:update).with({ "pkidaposento" => "" })
-        put :update, {:id => aposento.to_param, :aposento => { "pkidaposento" => "" }}, valid_session
+        Aposento.any_instance.should_receive(:update).with({ "valor" => "MyString" })
+        put :update, {:id => aposento.to_param, :aposento => { "valor" => "MyString" }}, valid_session
       end
 
       it "assigns the requested aposento as @aposento" do
@@ -128,7 +128,7 @@ describe AposentosController do
         aposento = Aposento.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Aposento.any_instance.stub(:save).and_return(false)
-        put :update, {:id => aposento.to_param, :aposento => { "pkidaposento" => "invalid value" }}, valid_session
+        put :update, {:id => aposento.to_param, :aposento => { "valor" => "invalid value" }}, valid_session
         assigns(:aposento).should eq(aposento)
       end
 
@@ -136,7 +136,7 @@ describe AposentosController do
         aposento = Aposento.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Aposento.any_instance.stub(:save).and_return(false)
-        put :update, {:id => aposento.to_param, :aposento => { "pkidaposento" => "invalid value" }}, valid_session
+        put :update, {:id => aposento.to_param, :aposento => { "valor" => "invalid value" }}, valid_session
         response.should render_template("edit")
       end
     end

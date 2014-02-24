@@ -1,0 +1,74 @@
+# coding: utf-8
+require 'spec_helper'
+
+feature 'gerenciar hospedagem' do
+
+  scenario 'incluir hospedagem' do #, :javascript => true  do
+
+    conta = FactoryGirl.create(:conta, :valorTotal => 'XXX')
+    hospede = FactoryGirl.create(:hospede, :nome => 'yyy')
+    aposento = FactoryGirl.create(:aposento, :numero => 'zzz')
+
+    visit new_conta_path
+
+    preencher_e_verificar_conta
+   
+
+  end
+
+  scenario 'alterar hospedagem' do #, :javascript => true  do
+
+    conta = FactoryGirl.create(:conta, :valorTotal => 'XXX')
+    hospede = FactoryGirl.create(:hospede, :nome => 'yyy')
+    aposento = FactoryGirl.create(:aposento, :numero => 'zzz')
+
+    hospedagem = FactoryGirl.create(:hospedagem,:conta => conta, :hospede => hospede, :aposento => aposento)
+
+    visit edit_hospedagem_path(hospedagem)
+
+    preencher_e_verificar_hospedagem
+
+
+  end
+
+  scenario 'excluir hospedagem' do #, :javascript => true  do
+
+    conta = FactoryGirl.create(:conta, :valorTotal => 'XXX')
+    hospede = FactoryGirl.create(:hospede, :nome => 'yyy')
+    aposento = FactoryGirl.create(:aposento, :numero => 'zzz')
+
+    hospedagem = FactoryGirl.create(:hospedagem,:conta => conta, :hospede => hospede, :aposento => aposento)
+
+    visit hospedagems_path
+
+    click_link 'Excluir'
+    
+    
+  end
+
+
+
+  def preencher_e_verificar_hospedagem
+  
+    fill_in 'dataEntrada', :with => '21-02-2014'
+    fill_in 'dataSaida', :with => '22-02-2014'
+    
+    select 'XXX', :from => 'conta'
+    select 'yyy', :from => 'hospede'
+    select 'zzz', :from => 'aposento' 
+    
+    click_button 'Salvar'
+    
+   
+    page.should have_content 'dataEntrada: 21-02-2014'
+    page.should have_content 'dataSaida: 22-02-2014'
+    
+
+    page.should have_content 'conta: XXX'
+    page.should have_content 'hospede: yyy'
+    page.should have_content 'aposento: zzz'
+  end
+
+      
+
+end
