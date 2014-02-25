@@ -1,4 +1,6 @@
 Hotelaria::Application.routes.draw do
+  resources :contas
+
   resources :aposentos
 
   resources :consumos

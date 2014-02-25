@@ -33,7 +33,7 @@ feature 'gerenciar aposento' do
     hotel = FactoryGirl.create(:hotel, :nome => "YYY") 
     
 
-    aposento = FactoryGirl.create(:aposento,:linha => linha,:estacao => estacao)
+    aposento = FactoryGirl.create(:aposento,:hotel => hotel)
 
     visit aposentos_path
 

@@ -28,7 +28,7 @@ feature 'gerenciar aposento' do
 
   end
 
-  scenario 'excluir trem linha' do #, :javascript => true  do
+  scenario 'excluir aposento' do #, :javascript => true  do
 
     hotel = FactoryGirl.create(:hotel, :nome => "YYY") 
     
