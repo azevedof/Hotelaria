@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>dataEntrada:</strong>
+  <%= @hospedagem.dataEntrada %>
+</p>
+
+<p>
+  <strong>dataSaida:</strong>
+  <%= @hospedagem.dataSaida %>
+</p>
+
+<p>
+  <strong>conta:</strong>
+  <%= @hospedagem.conta.pago %>
+</p>
+
+<p>
+  <strong>hospede:</strong>
+  <%= @hospedagem.hospede.nome %>
+</p>
+
+<p>
+  <strong>aposento:</strong>
+  <%= @hospedagem.aposento.descricao %>
+</p>
+
+<%= link_to 'Edit', edit_hospedagem_path(@hospedagem) %> |
+<%= link_to 'Back', hospedagens_path %>

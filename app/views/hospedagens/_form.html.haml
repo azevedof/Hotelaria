@@ -1,0 +1,12 @@
+= semantic_form_for [@hospedagem] do |form|
+  
+  = form.input :conta, :member_label => :pago, :label => 'conta'
+  = form.input :hospede, :member_label => :nome, :label => 'hospede'
+  = form.input :aposento, :member_label => :descricao, :label => 'aposento'
+
+
+  = form.input :dataEntrada, :label => 'dataEntrada'
+  = form.input :dataSaida, :label => 'dataSaida'
+  
+
+  = form.submit 'Salvar'

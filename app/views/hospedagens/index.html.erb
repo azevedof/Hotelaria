@@ -1,0 +1,35 @@
+<h1>Listing hospedagens</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dataentrada</th>
+      <th>Datasaida</th>
+      <th>Conta</th>
+      <th>Hospede</th>
+      <th>Aposento</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hospedagens.each do |hospedagem| %>
+      <tr>
+        <td><%= hospedagem.dataEntrada %></td>
+        <td><%= hospedagem.dataSaida %></td>
+        <td><%= hospedagem.conta %></td>
+        <td><%= hospedagem.hospede %></td>
+        <td><%= hospedagem.aposento %></td>
+        <td><%= link_to 'Show', hospedagem %></td>
+        <td><%= link_to 'Edit', edit_hospedagem_path(hospedagem) %></td>
+        <td><%= link_to 'Excluir', hospedagem, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hospedagem', new_hospedagem_path %>
